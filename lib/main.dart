@@ -6,7 +6,15 @@ import 'package:phone_verification/screens/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    // Replace with actual values
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyAFRsH3pbiwGNuseOtGvjIm6FSk_21EZBs",
+      appId: "1:1012619304116:android:be379c7f5a4adfa2468be1",
+      messagingSenderId: "1012619304116-hj0v2vqdfaaf49aihl568l1lee4l1k62.apps.googleusercontent.com",
+      projectId: "phone-auth-f997e",
+    ),
+  );
   runApp(MyApp());
 }
 

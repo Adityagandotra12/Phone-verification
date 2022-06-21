@@ -24,6 +24,8 @@ class _LoginScreenState extends State<LoginScreen> {
   String verificationId;
 
   bool showLoading = false;
+  
+  String get phone => '7889656412';
 
   void signInWithPhoneAuthCredential(
       PhoneAuthCredential phoneAuthCredential) async {
@@ -66,6 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
         SizedBox(
           height: 16,
         ),
+        // ignore: deprecated_member_use
         FlatButton(
           onPressed: () async {
             setState(() {
@@ -96,6 +99,13 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               codeAutoRetrievalTimeout: (verificationId) async {},
             );
+            FirebaseAuth.instance.signInWithPhoneNumber(
+              phone,
+    RecaptchaVerifier(
+      container: 'recaptchaDOM',
+      size: RecaptchaVerifierSize.compact,
+      theme: RecaptchaVerifierTheme.dark,
+    ));
           },
           child: Text("SEND"),
           color: Colors.blue,
